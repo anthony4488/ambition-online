@@ -724,6 +724,150 @@ max-width: 600px;
 margin: 0 auto;
 }
 
+/* ── TEXT QUOTES ── */
+.quotes-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 24px;
+margin-top: 48px;
+}
+
+.quote-card {
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-left: 3px solid var(--accent);
+border-radius: 12px;
+padding: 28px 24px;
+}
+
+.quote-card p {
+color: var(--text-secondary);
+font-size: 15px;
+line-height: 1.8;
+font-style: italic;
+margin-bottom: 16px;
+}
+
+.quote-card .quote-author {
+font-weight: 700;
+font-size: 14px;
+color: var(--text-primary);
+}
+
+.quote-card .quote-detail {
+font-size: 12px;
+color: var(--text-muted);
+}
+
+/* ── WHO THIS IS FOR ── */
+.for-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
+margin-top: 48px;
+}
+
+.for-card {
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 12px;
+padding: 28px 20px;
+text-align: center;
+transition: all 0.3s ease;
+}
+
+.for-card:hover {
+border-color: var(--border-accent);
+transform: translateY(-4px);
+}
+
+.for-card .for-icon {
+font-size: 32px;
+margin-bottom: 12px;
+}
+
+.for-card h4 {
+font-size: 16px;
+font-weight: 700;
+margin-bottom: 8px;
+}
+
+.for-card p {
+font-size: 13px;
+color: var(--text-secondary);
+line-height: 1.6;
+}
+
+/* ── WHAT YOU GET ── */
+.deliverables {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+margin-top: 48px;
+}
+
+.deliverable {
+display: flex;
+gap: 16px;
+align-items: flex-start;
+padding: 24px;
+background: var(--bg-card);
+border: 1px solid var(--border);
+border-radius: 12px;
+}
+
+.deliverable .del-icon {
+font-size: 28px;
+flex-shrink: 0;
+}
+
+.deliverable h4 {
+font-size: 16px;
+font-weight: 700;
+margin-bottom: 6px;
+}
+
+.deliverable p {
+font-size: 14px;
+color: var(--text-secondary);
+line-height: 1.6;
+}
+
+/* ── GUARANTEE ── */
+.guarantee-box {
+text-align: center;
+padding: 40px 32px;
+margin-top: 40px;
+border: 2px dashed var(--border-accent);
+border-radius: 16px;
+background: rgba(255,107,0,0.03);
+}
+
+.guarantee-box h3 {
+font-family: 'Bebas Neue', sans-serif;
+font-size: 28px;
+margin-bottom: 12px;
+}
+
+.guarantee-box p {
+color: var(--text-secondary);
+font-size: 15px;
+max-width: 500px;
+margin: 0 auto;
+line-height: 1.7;
+}
+
+/* ── URGENCY BAR ── */
+.urgency-bar {
+text-align: center;
+padding: 12px 20px;
+background: var(--accent);
+color: #000;
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 0.02em;
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal {
 opacity: 0;
@@ -867,7 +1011,7 @@ to { opacity: 1; transform: translateY(0); }
   <div class="hero-badge">⚡ Remote Analysis — Anywhere In The World</div>
   <h1>Find Out Exactly Why<br>You're <span class="accent">Slow.</span></h1>
   <p class="hero-sub">Send us footage. We run a full 240fps biomechanical analysis, identify the exact limiters killing your speed, and build a program to fix them.</p>
-  <a href="#pricing" class="hero-cta">See The Programs ↓</a>
+  <a href="#pricing" class="hero-cta">Get Your Speed Analysis — $249 ↓</a>
   <div class="hero-stats">
     <div>
       <div class="hero-stat-num">1,000+</div>
@@ -943,6 +1087,92 @@ to { opacity: 1; transform: translateY(0); }
         <h3>Get Your Report + Program</h3>
         <p>A detailed report showing exactly what's limiting your speed. Plus a 12-week individualised program built to fix it. No guessing. No generic drills.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU'LL RECEIVE ── -->
+
+<section class="section">
+  <div class="section-label reveal">What You Get</div>
+  <div class="section-title bebas">Not A Generic PDF. A Complete Speed Blueprint.</div>
+  <p class="section-desc">Here's exactly what lands in your inbox within 5-7 business days of sending your footage.</p>
+
+  <div class="deliverables">
+    <div class="deliverable reveal">
+      <div class="del-icon">📊</div>
+      <div>
+        <h4>Full Biomechanical Report</h4>
+        <p>Every metric measured: ground contact time, projection angle, knee deformation, stride length, stride frequency. Not guesswork — data.</p>
+      </div>
+    </div>
+    <div class="deliverable reveal reveal-delay-1">
+      <div class="del-icon">🎯</div>
+      <div>
+        <h4>Your Limiters — Ranked</h4>
+        <p>We identify the 2-3 specific things killing your speed and rank them by impact. Fix the right things first — not random drills from YouTube.</p>
+      </div>
+    </div>
+    <div class="deliverable reveal reveal-delay-2">
+      <div class="del-icon">🎬</div>
+      <div>
+        <h4>Video Walkthrough</h4>
+        <p>A personal video breaking down your analysis frame-by-frame. You'll see exactly what we see — and understand why it matters.</p>
+      </div>
+    </div>
+    <div class="deliverable reveal">
+      <div class="del-icon">📋</div>
+      <div>
+        <h4>Speed Bracket Assessment</h4>
+        <p>Where you sit on our 16-38 km/h scale, what's holding you at that level, and exactly what needs to change to break through to the next bracket.</p>
+      </div>
+    </div>
+    <div class="deliverable reveal reveal-delay-1">
+      <div class="del-icon">🏋️</div>
+      <div>
+        <h4>12-Week Program (Tier 2+)</h4>
+        <p>Not a template. A program built specifically for YOUR limiters, with video demonstrations and coaching cues for every drill.</p>
+      </div>
+    </div>
+    <div class="deliverable reveal reveal-delay-2">
+      <div class="del-icon">📈</div>
+      <div>
+        <h4>Re-Analysis at Week 12 (Tier 2+)</h4>
+        <p>Send us new footage. We measure the difference. You see the improvement in black and white. No hiding from the numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── WHO THIS IS FOR ── -->
+
+<section class="section">
+  <div class="section-label reveal">Is This For You?</div>
+  <div class="section-title bebas">Built For Athletes Who Are Serious About Speed.</div>
+  <p class="section-desc">If you play a sport where being faster changes the game — this is for you.</p>
+
+  <div class="for-grid">
+    <div class="for-card reveal">
+      <div class="for-icon">⚽</div>
+      <h4>Footballers</h4>
+      <p>Win the race to the ball. Beat your defender. Get scouted. Our system has produced €4M+ in transfers.</p>
+    </div>
+    <div class="for-card reveal reveal-delay-1">
+      <div class="for-icon">🏃</div>
+      <h4>Sprinters & Track</h4>
+      <p>Shave seconds off your 100m. Fix the mechanics your coach can't see. Virginia ran 10.54 — remotely.</p>
+    </div>
+    <div class="for-card reveal reveal-delay-2">
+      <div class="for-icon">🏉</div>
+      <h4>Rugby & AFL</h4>
+      <p>First to the breakdown. Acceleration off the mark. The 0-10m is where games are won and lost.</p>
+    </div>
+    <div class="for-card reveal reveal-delay-3">
+      <div class="for-icon">🏀</div>
+      <h4>Any Sport</h4>
+      <p>Basketball, cricket, baseball — if speed gives you an edge, biomechanics is how you unlock it.</p>
     </div>
   </div>
 </section>
@@ -1198,70 +1428,70 @@ to { opacity: 1; transform: translateY(0); }
       <p style="color: var(--text-secondary); font-size: 15px; line-height: 1.7;">State Champion. 10 D1 scholarship offers. Full remote biomechanical analysis and programming — proving this system works from anywhere in the world. She never set foot in Sydney.</p>
     </div>
   </div>
+
+  <!-- Text Testimonials -->
+  <div class="quotes-grid" style="margin-top: 48px;">
+    <div class="quote-card reveal">
+      <p>"His measurements are specific — not wishy washy drills. He showed me exactly what was limiting my speed and the program fixed it in weeks."</p>
+      <div class="quote-author">Liam Flack</div>
+      <div class="quote-detail">28 → 35.8 km/h • Multi-Sport</div>
+    </div>
+    <div class="quote-card reveal reveal-delay-1">
+      <p>"I was stuck at 28 km/h for years. Every coach said the same thing — 'just do more sprints.' Anthony showed me it was my ground contact time and projection angle. Hit 34 km/h in 4 weeks."</p>
+      <div class="quote-author">Marc Sylla</div>
+      <div class="quote-detail">28 → 34 km/h • Semi-Pro Footballer</div>
+    </div>
+    <div class="quote-card reveal reveal-delay-2">
+      <p>"I'm in Ukraine. Never met Anthony in person. He analysed my footage remotely, built my program, and I went from 29 to 33 km/h in 3 weeks. The data doesn't care where you are."</p>
+      <div class="quote-author">Nik P</div>
+      <div class="quote-detail">29.1 → 33 km/h • 2nd Division Academy, Ukraine</div>
+    </div>
+  </div>
 </section>
 
 <!-- ── PRICING ── -->
 
 <section class="pricing-section" id="pricing">
-  <div class="pricing-inner">
-    <div class="section-label">Choose Your Level</div>
-    <div class="section-title bebas">Three Tiers. Pick How Serious You Are.</div>
-    <p class="section-desc">Every tier starts with the same biomechanical analysis. The difference is how far we take it.</p>
+  <div class="pricing-inner" style="text-align: center;">
+    <div class="section-label">Get Started</div>
+    <div class="section-title bebas">Find Out Exactly What's Making You Slow.</div>
+    <p class="section-desc" style="margin: 0 auto 48px;">One analysis. Every answer. The same system used by Bundesliga players, Paralympic gold medalists, and 1,000+ athletes worldwide.</p>
 
-<div class="pricing-grid">
-  <!-- Tier 1 -->
-  <div class="price-card">
-    <div class="price-tier silver">TIER 1</div>
-    <div class="price-name bebas">The Analysis</div>
-    <div class="price-amount">$499</div>
-    <div class="price-value">Value: $800+</div>
-    <ul class="price-features">
-      <li>Full biomechanical analysis from your footage</li>
-      <li>Detailed report identifying all speed limiters</li>
-      <li>Speed bracket assessment (16-38 km/h)</li>
-      <li>Ground contact time, projection angle, knee deformation measured</li>
-      <li>Primary and secondary limiters ranked</li>
-      <li>Video walkthrough of your analysis</li>
-    </ul>
-    <a href="#cta" class="price-btn secondary">Get The Analysis →</a>
-  </div>
+    <div style="max-width: 520px; margin: 0 auto;">
+      <div class="price-card featured" style="text-align: left;">
+        <div class="popular-badge">Limited Spots Each Month</div>
+        <div class="price-name bebas">The Speed Analysis</div>
+        <div style="display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px;">
+          <div class="price-amount">$249</div>
+          <div style="font-size: 18px; color: var(--text-muted); text-decoration: line-through;">$499</div>
+        </div>
+        <div class="price-value">Less than one session with a sports physio — but it tells you 10x more.</div>
+        <ul class="price-features">
+          <li>Full 240fps biomechanical analysis from your footage</li>
+          <li>Detailed report identifying every speed limiter</li>
+          <li>Speed bracket assessment (16–38 km/h scale)</li>
+          <li>Ground contact time, projection angle, knee deformation — all measured</li>
+          <li>Your primary and secondary limiters ranked by impact</li>
+          <li>Personal video walkthrough explaining your analysis</li>
+          <li>Delivered within 5–7 business days</li>
+          <li>Works for any sport — football, athletics, rugby, AFL, basketball</li>
+        </ul>
+        <a href="#cta" class="price-btn primary" style="font-size: 17px; padding: 18px 32px;">Get My Speed Analysis — $249 →</a>
+        <p style="text-align: center; margin-top: 16px; font-size: 13px; color: var(--text-muted);">Secure checkout • Results in 5-7 days • Phone camera is all you need</p>
+      </div>
 
-  <!-- Tier 2 -->
-  <div class="price-card featured">
-    <div class="popular-badge">Most Popular</div>
-    <div class="price-tier gold">TIER 2</div>
-    <div class="price-name bebas">The Program</div>
-    <div class="price-amount">$1,999</div>
-    <div class="price-value">Value: $4,000–$5,000</div>
-    <ul class="price-features">
-      <li>Everything in The Analysis</li>
-      <li>12-week individualised speed development program</li>
-      <li>Full video drill library with coaching cues</li>
-      <li>Speed bracket roadmap — what to fix at every level</li>
-      <li>Week 12 re-analysis — measure your improvement</li>
-      <li>1x video call to walk through your plan</li>
-    </ul>
-    <a href="#cta" class="price-btn primary">Get The Program →</a>
-  </div>
+      <!-- Guarantee -->
+      <div class="guarantee-box">
+        <h3>100% Valuable — Or Your Money Back.</h3>
+        <p>If your analysis doesn't show you something about your mechanics that no one has ever told you before — we'll refund you in full. In 200+ analyses, we've never had to. The data speaks for itself.</p>
+      </div>
 
-  <!-- Tier 3 -->
-  <div class="price-card">
-    <div class="price-tier platinum">TIER 3</div>
-    <div class="price-name bebas">The Full System</div>
-    <div class="price-amount">$5,999</div>
-    <div class="price-value">Value: $15,000–$20,000</div>
-    <ul class="price-features">
-      <li>Everything in The Program</li>
-      <li>6 months remote coaching</li>
-      <li>Monthly re-analysis and program updates</li>
-      <li>Direct WhatsApp access to the coaching team</li>
-      <li>Full 6-month periodisation plan</li>
-      <li>2x live video calls with Anthony personally</li>
-      <li>Footage review and feedback within 24 hours</li>
-    </ul>
-    <a href="#cta" class="price-btn secondary">Get The Full System →</a>
-  </div>
-</div>
+      <!-- Upgrade path -->
+      <div style="margin-top: 32px; padding: 24px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; text-align: left;">
+        <p style="font-weight: 700; font-size: 15px; margin-bottom: 8px; color: var(--accent);">Want us to fix it too?</p>
+        <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.7;">After your analysis, you can upgrade to a full 12-week individualised program, or 6 months of 1-on-1 remote coaching with Anthony. Your $249 is credited toward the upgrade — no double-paying. Start with the data. Then decide how far you want to take it.</p>
+      </div>
+    </div>
 
   </div>
 </section>
@@ -1322,11 +1552,19 @@ to { opacity: 1; transform: translateY(0); }
     </div>
     <div class="faq-item">
       <div class="faq-q">What if I'm not happy with the analysis?</div>
-      <div class="faq-a">In 200+ analyses, we've never had an athlete say the analysis wasn't valuable. You'll see things about your mechanics that no one has ever shown you before. If you're serious about getting faster, the data speaks for itself.</div>
+      <div class="faq-a">100% money-back guarantee. If your analysis doesn't show you something about your mechanics that no one has ever told you before, we'll refund you in full. In 200+ analyses, we've never had to.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">Can I upgrade from The Analysis to The Program later?</div>
-      <div class="faq-a">Yes. If you start with The Analysis and want to upgrade, we'll credit your $499 toward The Program or The Full System. No double-paying.</div>
+      <div class="faq-q">Can I get a full program built after the analysis?</div>
+      <div class="faq-a">Yes. After seeing your results, you can upgrade to a 12-week individualised program or 6 months of 1-on-1 remote coaching. Your $249 is credited toward the upgrade — no double-paying. Most athletes start with the analysis to see the data, then upgrade.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is $249 worth it? I can find free speed content online.</div>
+      <div class="faq-a">Free content tells you what to do in general. We tell you what's wrong with YOU specifically. That's the difference between random drills and targeted improvement. One physio session costs more than this — and tells you less. This is the cheapest way to get a professional biomechanical analysis anywhere in the world.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How is this different from my coach watching me run?</div>
+      <div class="faq-a">Your coach sees you at 30fps with their eyes. We measure you at 240fps with data. Ground contact time differences of 0.02 seconds are invisible to the human eye but can mean 2-3 km/h of speed. We measure what nobody else can see — that's why athletes who've been coached for years still find new limiters in our analysis.</div>
     </div>
   </div>
 </section>
@@ -1334,9 +1572,10 @@ to { opacity: 1; transform: translateY(0); }
 <!-- ── FINAL CTA ── -->
 
 <section class="final-cta" id="cta">
-  <h2 class="bebas">Stop Guessing.<br>Start <span style="color: var(--accent);">Knowing.</span></h2>
-  <p>Send us footage. We'll show you exactly what's limiting your speed — and how to fix it.</p>
-  <a href="#pricing" class="hero-cta">Choose Your Program ↑</a>
+  <h2 class="bebas">Every Week You Train Without Data,<br>You're Training <span style="color: var(--accent);">Blind.</span></h2>
+  <p style="max-width: 560px; margin: 0 auto 20px;">Your coach can't see what 240fps cameras can. Your limiters are invisible to the eye. Stop guessing why you're not getting faster — and start knowing.</p>
+  <a href="#pricing" class="hero-cta">Get My Speed Analysis — $249 →</a>
+  <p style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">100% money-back guarantee • Delivered in 5-7 days • Works from anywhere in the world</p>
 </section>
 
 <!-- ── FOOTER ── -->
