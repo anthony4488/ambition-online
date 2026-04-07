@@ -295,22 +295,51 @@ left: 50%;
 transform: translate(-50%, -50%);
 width: 56px;
 height: 56px;
-background: rgba(0,0,0,0.7);
-border: 2px solid var(--accent);
+background: rgba(0,0,0,0.5);
+border: none;
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
+transition: transform 0.2s ease;
+backdrop-filter: blur(4px);
+}
+
+.result-card:hover .play-btn {
+transform: translate(-50%, -50%) scale(1.1);
 }
 
 .play-btn::after {
 content: ‘’;
 width: 0;
 height: 0;
-border-left: 16px solid var(--accent);
+border-left: 16px solid #fff;
 border-top: 10px solid transparent;
 border-bottom: 10px solid transparent;
 margin-left: 4px;
+}
+
+.result-thumb .thumb-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.25);
+transition: background 0.3s ease;
+}
+
+.result-card:hover .thumb-overlay {
+background: rgba(0,0,0,0.15);
+}
+
+.result-thumb iframe {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+border: none;
 }
 
 .result-info { padding: 20px; }
@@ -339,51 +368,6 @@ color: var(--accent);
 .result-name { font-weight: 700; font-size: 16px; }
 .result-detail { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
-/* ── VIDEO MODAL ── */
-.video-modal {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.92);
-z-index: 9999;
-display: none;
-align-items: center;
-justify-content: center;
-cursor: pointer;
-}
-
-.video-modal.active {
-display: flex;
-}
-
-.video-modal-inner {
-position: relative;
-width: 90%;
-max-width: 900px;
-aspect-ratio: 16/9;
-}
-
-.video-modal-inner iframe {
-width: 100%;
-height: 100%;
-border: none;
-border-radius: 12px;
-}
-
-.video-modal-close {
-position: absolute;
-top: -40px;
-right: 0;
-color: #fff;
-font-size: 28px;
-cursor: pointer;
-background: none;
-border: none;
-font-weight: 700;
-z-index: 10000;
-}
 
 /* ── REMOTE PROOF ── */
 .remote-proof {
@@ -975,7 +959,8 @@ to { opacity: 1; transform: translateY(0); }
   <div class="results-grid">
     <div class="result-card reveal" data-video="g_H63fOBaNs">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/g_H63fOBaNs/hqdefault.jpg" alt="George F Transformation">
+        <img src="https://img.youtube.com/vi/g_H63fOBaNs/maxresdefault.jpg" alt="George F Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -991,7 +976,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-1" data-video="60Cbilmxqm0">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/60Cbilmxqm0/hqdefault.jpg" alt="Hais Transformation">
+        <img src="https://img.youtube.com/vi/60Cbilmxqm0/maxresdefault.jpg" alt="Hais Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1007,7 +993,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-2" data-video="L-GYyboePYU">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/L-GYyboePYU/hqdefault.jpg" alt="James Transformation">
+        <img src="https://img.youtube.com/vi/L-GYyboePYU/maxresdefault.jpg" alt="James Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1023,7 +1010,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal" data-video="eFzb4-BfkeM">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/eFzb4-BfkeM/hqdefault.jpg" alt="Adam Pro Footballer">
+        <img src="https://img.youtube.com/vi/eFzb4-BfkeM/maxresdefault.jpg" alt="Adam Pro Footballer">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1039,7 +1027,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-1" data-video="6hgQOEG1CDQ">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/6hgQOEG1CDQ/hqdefault.jpg" alt="Marc Transformation">
+        <img src="https://img.youtube.com/vi/6hgQOEG1CDQ/maxresdefault.jpg" alt="Marc Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1055,7 +1044,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-2" data-video="_tRGs6CwR90">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/_tRGs6CwR90/hqdefault.jpg" alt="Tim R Transformation">
+        <img src="https://img.youtube.com/vi/_tRGs6CwR90/maxresdefault.jpg" alt="Tim R Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1071,7 +1061,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal" data-video="WivbBokZt9I">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/WivbBokZt9I/hqdefault.jpg" alt="Billy Francis Transformation">
+        <img src="https://img.youtube.com/vi/WivbBokZt9I/maxresdefault.jpg" alt="Billy Francis Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1087,7 +1078,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-1" data-video="icEHywvHhAg">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/icEHywvHhAg/hqdefault.jpg" alt="Hadi Transformation">
+        <img src="https://img.youtube.com/vi/icEHywvHhAg/maxresdefault.jpg" alt="Hadi Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1103,7 +1095,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-2" data-video="6kiM5ea_GvQ">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/6kiM5ea_GvQ/hqdefault.jpg" alt="Abi O Transformation">
+        <img src="https://img.youtube.com/vi/6kiM5ea_GvQ/maxresdefault.jpg" alt="Abi O Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1119,7 +1112,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal" data-video="l5m0wwJFq-Q">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/l5m0wwJFq-Q/hqdefault.jpg" alt="Jess Transformation">
+        <img src="https://img.youtube.com/vi/l5m0wwJFq-Q/maxresdefault.jpg" alt="Jess Transformation">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1135,7 +1129,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-1" data-video="hTZLMjnLFds">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/hTZLMjnLFds/hqdefault.jpg" alt="Virginia Champion">
+        <img src="https://img.youtube.com/vi/hTZLMjnLFds/maxresdefault.jpg" alt="Virginia Champion">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1151,7 +1146,8 @@ to { opacity: 1; transform: translateY(0); }
 
     <div class="result-card reveal reveal-delay-2" data-video="kWksIynHYs0">
       <div class="result-thumb">
-        <img src="https://img.youtube.com/vi/kWksIynHYs0/hqdefault.jpg" alt="Jonathan Wong Paralympic Gold">
+        <img src="https://img.youtube.com/vi/kWksIynHYs0/maxresdefault.jpg" alt="Jonathan Wong Paralympic Gold">
+        <div class="thumb-overlay"></div>
         <div class="play-btn"></div>
       </div>
       <div class="result-info">
@@ -1195,7 +1191,7 @@ to { opacity: 1; transform: translateY(0); }
   <!-- Remote proof callout -->
 
   <div class="remote-proof reveal">
-    <img src="https://img.youtube.com/vi/l5m0wwJFq-Q/hqdefault.jpg" alt="Virginia Champion" class="remote-proof-img">
+    <img src="https://img.youtube.com/vi/l5m0wwJFq-Q/maxresdefault.jpg" alt="Virginia Champion" class="remote-proof-img">
     <div>
       <div class="remote-tag">🌎 Remote Client — USA</div>
       <h3 style="font-size: 24px; margin-bottom: 8px;">Virginia Champion — 10.54s 100m</h3>
@@ -1371,14 +1367,6 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </footer>
 
-<!-- Video Modal -->
-<div class="video-modal" id="videoModal">
-  <div class="video-modal-inner">
-    <button class="video-modal-close">&times;</button>
-    <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div>
-
 <script>
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {
@@ -1391,33 +1379,14 @@ document.querySelectorAll('.faq-q').forEach(q => {
   });
 });
 
-// Video modal - play on site
-const modal = document.getElementById('videoModal');
-const videoFrame = document.getElementById('videoFrame');
-
+// Inline video embed - click thumbnail to play in-card
 document.querySelectorAll('.result-card[data-video]').forEach(card => {
   card.addEventListener('click', () => {
     const videoId = card.getAttribute('data-video');
-    videoFrame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    const thumb = card.querySelector('.result-thumb');
+    if (thumb.querySelector('iframe')) return; // already playing
+    thumb.innerHTML = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   });
-});
-
-function closeModal() {
-  modal.classList.remove('active');
-  videoFrame.src = '';
-  document.body.style.overflow = '';
-}
-
-modal.addEventListener('click', (e) => {
-  if (e.target === modal || e.target.classList.contains('video-modal-close')) {
-    closeModal();
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
 });
 
 // Scroll reveal
