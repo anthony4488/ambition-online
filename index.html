@@ -665,6 +665,150 @@ font-size: 13px;
 footer a { color: var(--text-secondary); text-decoration: none; }
 footer a:hover { color: var(--accent); }
 
+/* ── NAV ── */
+.site-nav {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 100;
+background: rgba(10,10,10,0.95);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(--border);
+padding: 14px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+gap: 28px;
+}
+
+.nav-links a {
+color: var(--text-secondary);
+text-decoration: none;
+font-size: 14px;
+font-weight: 500;
+transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-primary); }
+
+.nav-cta {
+background: var(--accent);
+color: #000 !important;
+font-weight: 700 !important;
+font-size: 13px;
+padding: 10px 20px;
+border-radius: 6px;
+}
+
+.nav-cta:hover { color: #000 !important; }
+
+.hamburger {
+display: none;
+flex-direction: column;
+gap: 5px;
+cursor: pointer;
+background: none;
+border: none;
+padding: 4px;
+}
+
+.hamburger span {
+display: block;
+width: 24px;
+height: 2px;
+background: var(--text-primary);
+border-radius: 2px;
+transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+/* ── SECTION DIVIDERS ── */
+.section-divider {
+height: 1px;
+background: linear-gradient(90deg, transparent, var(--border-accent), transparent);
+max-width: 600px;
+margin: 0 auto;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+opacity: 0;
+transform: translateY(40px);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ── FOOTER ENHANCED ── */
+.site-footer {
+border-top: 1px solid var(--border);
+padding: 60px 20px 40px;
+background: var(--bg-secondary);
+}
+
+.footer-inner {
+max-width: 1100px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 2fr 1fr 1fr;
+gap: 48px;
+margin-bottom: 40px;
+}
+
+.footer-brand p {
+color: var(--text-secondary);
+font-size: 14px;
+line-height: 1.7;
+margin-top: 16px;
+max-width: 320px;
+}
+
+.footer-col h4 {
+font-size: 13px;
+text-transform: uppercase;
+letter-spacing: 0.1em;
+color: var(--text-primary);
+margin-bottom: 16px;
+font-weight: 700;
+}
+
+.footer-col a {
+display: block;
+color: var(--text-secondary);
+text-decoration: none;
+font-size: 14px;
+padding: 4px 0;
+transition: color 0.3s ease;
+}
+
+.footer-col a:hover { color: var(--accent); }
+
+.footer-bottom {
+border-top: 1px solid var(--border);
+padding-top: 24px;
+text-align: center;
+color: var(--text-muted);
+font-size: 13px;
+max-width: 1100px;
+margin: 0 auto;
+}
+
 /* ── ANIMATIONS ── */
 @keyframes fadeInUp {
 from { opacity: 0; transform: translateY(24px); }
@@ -686,6 +830,28 @@ to { opacity: 1; transform: translateY(0); }
 .coach-creds { justify-content: center; }
 .pricing-grid { grid-template-columns: 1fr; }
 .results-grid { grid-template-columns: 1fr; }
+.footer-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+.footer-brand p { max-width: 100%; }
+
+.hamburger { display: flex; }
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(10,10,10,0.98);
+  backdrop-filter: blur(12px);
+  flex-direction: column;
+  padding: 20px 24px;
+  gap: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-links.open { display: flex; }
+
+.nav-links a { font-size: 16px; }
 }
 </style>
 
@@ -694,9 +860,20 @@ to { opacity: 1; transform: translateY(0); }
 
 <!-- ── NAV ── -->
 
-<nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center;">
+<nav class="site-nav">
   <img src="https://storage.mlcdn.com/account_image/1369958/Kzh6vBIY7x6XPCx7jGJ1LDjgV2mCV5Van2ISYxg0.png" alt="Ambition Sports Performance" style="height: 36px;">
-  <a href="#pricing" style="background: var(--accent); color: #000; font-weight: 700; font-size: 13px; padding: 10px 20px; border-radius: 6px; text-decoration: none;">Get Started →</a>
+  <div class="nav-links" id="navLinks">
+    <a href="#results">Results</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#how">How It Works</a>
+    <a href="#coach">About</a>
+    <a href="#pricing" class="nav-cta">Get Started →</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </nav>
 
 <!-- ── HERO ── -->
@@ -748,23 +925,23 @@ to { opacity: 1; transform: translateY(0); }
 
 <!-- ── HOW IT WORKS ── -->
 
-<section class="how-it-works">
+<section class="how-it-works" id="how">
   <div class="hiw-inner">
     <div class="section-label">How It Works</div>
     <div class="section-title bebas">Three Steps. From Anywhere.</div>
     <p class="section-desc">You don't need to be in Sydney. You don't need expensive equipment. You need a camera and footage of you running.</p>
     <div class="hiw-steps">
-      <div class="hiw-step">
+      <div class="hiw-step reveal">
         <div class="hiw-num">01</div>
         <h3>Send Us Footage</h3>
         <p>Film your athlete sprinting from a side angle. Phone camera is fine. Upload it through the link we send you. We'll guide you on exactly what we need.</p>
       </div>
-      <div class="hiw-step">
+      <div class="hiw-step reveal reveal-delay-1">
         <div class="hiw-num">02</div>
         <h3>We Analyse Everything</h3>
         <p>240fps biomechanical breakdown. Projection angle. Ground contact time. Knee deformation. Single leg reactive strength. We measure what nobody else measures.</p>
       </div>
-      <div class="hiw-step">
+      <div class="hiw-step reveal reveal-delay-2">
         <div class="hiw-num">03</div>
         <h3>Get Your Report + Program</h3>
         <p>A detailed report showing exactly what's limiting your speed. Plus a 12-week individualised program built to fix it. No guessing. No generic drills.</p>
@@ -773,15 +950,17 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ── RESULTS ── -->
 
 <section class="section" id="results">
-  <div class="section-label">The Proof</div>
+  <div class="section-label reveal">The Proof</div>
   <div class="section-title bebas">These Results Speak For Themselves.</div>
   <p class="section-desc">Not outliers. Not exceptions. This is what happens when you fix the right things.</p>
 
   <div class="results-grid">
-    <div class="result-card" data-video="g_H63fOBaNs">
+    <div class="result-card reveal" data-video="g_H63fOBaNs">
       <div class="result-thumb">
         <img src="https://img.youtube.com/vi/g_H63fOBaNs/hqdefault.jpg" alt="George F Transformation">
         <div class="play-btn"></div>
@@ -797,7 +976,7 @@ to { opacity: 1; transform: translateY(0); }
       </div>
     </div>
 
-    <div class="result-card" data-video="60Cbilmxqm0">
+    <div class="result-card reveal reveal-delay-1" data-video="60Cbilmxqm0">
       <div class="result-thumb">
         <img src="https://img.youtube.com/vi/60Cbilmxqm0/hqdefault.jpg" alt="Hais Transformation">
         <div class="play-btn"></div>
@@ -813,7 +992,7 @@ to { opacity: 1; transform: translateY(0); }
       </div>
     </div>
 
-    <div class="result-card" data-video="L-GYyboePYU">
+    <div class="result-card reveal reveal-delay-2" data-video="L-GYyboePYU">
       <div class="result-thumb">
         <img src="https://img.youtube.com/vi/L-GYyboePYU/hqdefault.jpg" alt="James Transformation">
         <div class="play-btn"></div>
@@ -829,7 +1008,7 @@ to { opacity: 1; transform: translateY(0); }
       </div>
     </div>
 
-    <div class="result-card" data-video="eFzb4-BfkeM">
+    <div class="result-card reveal" data-video="eFzb4-BfkeM">
       <div class="result-thumb">
         <img src="https://img.youtube.com/vi/eFzb4-BfkeM/hqdefault.jpg" alt="Adam Pro Footballer">
         <div class="play-btn"></div>
@@ -845,7 +1024,7 @@ to { opacity: 1; transform: translateY(0); }
       </div>
     </div>
 
-    <div class="result-card" data-video="6hgQOEG1CDQ">
+    <div class="result-card reveal reveal-delay-1" data-video="6hgQOEG1CDQ">
       <div class="result-thumb">
         <img src="https://img.youtube.com/vi/6hgQOEG1CDQ/hqdefault.jpg" alt="Marc Transformation">
         <div class="play-btn"></div>
@@ -861,7 +1040,7 @@ to { opacity: 1; transform: translateY(0); }
       </div>
     </div>
 
-    <div class="result-card" data-video="_tRGs6CwR90">
+    <div class="result-card reveal reveal-delay-2" data-video="_tRGs6CwR90">
       <div class="result-thumb">
         <img src="https://img.youtube.com/vi/_tRGs6CwR90/hqdefault.jpg" alt="Tim R Transformation">
         <div class="play-btn"></div>
@@ -880,7 +1059,7 @@ to { opacity: 1; transform: translateY(0); }
 
     <!-- Remote proof callout -->
 
-  <div class="remote-proof">
+  <div class="remote-proof reveal">
     <img src="https://img.youtube.com/vi/l5m0wwJFq-Q/hqdefault.jpg" alt="Virginia Champion" class="remote-proof-img">
     <div>
       <div class="remote-tag">🌎 Remote Client — USA</div>
@@ -958,13 +1137,15 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ── COACH ── -->
 
-<section class="section">
-  <div class="section-label">Who's Behind This</div>
+<section class="section" id="coach">
+  <div class="section-label reveal">Who's Behind This</div>
   <div class="section-title bebas">23 Years On The Track. 1,000+ Athletes. One System.</div>
 
-  <div class="coach-section">
+  <div class="coach-section reveal">
     <img src="https://storage.mlcdn.com/account_image/1369958/EcgW8pKurilXHyzvc9HdJeByoqu61CphnBUcq3eA.jpg" alt="Anthony Atanasov" class="coach-img">
     <div>
       <h3 style="font-size: 28px; margin-bottom: 12px;">Anthony Atanasov</h3>
@@ -981,13 +1162,15 @@ to { opacity: 1; transform: translateY(0); }
   </div>
 </section>
 
+<div class="section-divider"></div>
+
 <!-- ── FAQ ── -->
 
-<section class="section">
-  <div class="section-label">Questions</div>
+<section class="section" id="faq">
+  <div class="section-label reveal">Questions</div>
   <div class="section-title bebas">Frequently Asked</div>
 
-  <div class="faq-list">
+  <div class="faq-list reveal">
     <div class="faq-item">
       <div class="faq-q">How do I send footage?</div>
       <div class="faq-a">After purchase, we send you a link with exact instructions — what angle to film from, how far away, how many sprints we need. Phone camera is fine. We'll guide you through everything so we get what we need for a proper analysis.</div>
@@ -1029,12 +1212,30 @@ to { opacity: 1; transform: translateY(0); }
 
 <!-- ── FOOTER ── -->
 
-<footer>
-  <p style="margin-bottom: 12px;">
-    <a href="https://www.instagram.com/ambitionsportsperformance/" target="_blank" style="margin: 0 12px;">Instagram</a>
-    <a href="https://www.youtube.com/@ambitionfootball/featured" target="_blank" style="margin: 0 12px;">YouTube</a>
-  </p>
-  <p>© 2026 Ambition Sports Performance. All rights reserved.</p>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="https://storage.mlcdn.com/account_image/1369958/Kzh6vBIY7x6XPCx7jGJ1LDjgV2mCV5Van2ISYxg0.png" alt="Ambition Sports Performance" style="height: 32px;">
+      <p>Remote biomechanical speed analysis for athletes worldwide. 23 years of coaching distilled into a system that works from anywhere.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#results">Results</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#coach">About Anthony</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://www.instagram.com/ambitionsportsperformance/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@ambitionfootball/featured" target="_blank">YouTube</a>
+      <a href="mailto:info@ambitionsportsperformance.com">Email Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Ambition Sports Performance. All rights reserved.</p>
+  </div>
 </footer>
 
 <!-- Video Modal -->
@@ -1085,6 +1286,49 @@ modal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Hamburger menu
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+
+// Close mobile nav on link click
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('open');
+  });
+});
+
+// Hide nav on scroll down, show on scroll up
+let lastScroll = 0;
+const nav = document.querySelector('.site-nav');
+window.addEventListener('scroll', () => {
+  const current = window.scrollY;
+  if (current > lastScroll && current > 80) {
+    nav.style.transform = 'translateY(-100%)';
+  } else {
+    nav.style.transform = 'translateY(0)';
+  }
+  lastScroll = current;
+}, { passive: true });
+nav.style.transition = 'transform 0.3s ease';
 </script>
 
 </body>
