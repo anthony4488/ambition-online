@@ -338,6 +338,52 @@ color: var(--accent);
 .result-name { font-weight: 700; font-size: 16px; }
 .result-detail { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
 
+/* ── VIDEO MODAL ── */
+.video-modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.92);
+z-index: 9999;
+display: none;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+
+.video-modal.active {
+display: flex;
+}
+
+.video-modal-inner {
+position: relative;
+width: 90%;
+max-width: 900px;
+aspect-ratio: 16/9;
+}
+
+.video-modal-inner iframe {
+width: 100%;
+height: 100%;
+border: none;
+border-radius: 12px;
+}
+
+.video-modal-close {
+position: absolute;
+top: -40px;
+right: 0;
+color: #fff;
+font-size: 28px;
+cursor: pointer;
+background: none;
+border: none;
+font-weight: 700;
+z-index: 10000;
+}
+
 /* ── REMOTE PROOF ── */
 .remote-proof {
 background: linear-gradient(135deg, rgba(0,230,118,0.04), transparent);
@@ -735,7 +781,7 @@ to { opacity: 1; transform: translateY(0); }
   <p class="section-desc">Not outliers. Not exceptions. This is what happens when you fix the right things.</p>
 
   <div class="results-grid">
-    <a class="result-card" href="https://youtube.com/watch?v=g_H63fOBaNs" target="_blank">
+    <div class="result-card" data-video="g_H63fOBaNs">
       <div class="result-thumb">
         <img src="https://img.youtube.com/vi/g_H63fOBaNs/hqdefault.jpg" alt="George F Transformation">
         <div class="play-btn"></div>
@@ -749,93 +795,90 @@ to { opacity: 1; transform: translateY(0); }
         <div class="result-name">George Francis</div>
         <div class="result-detail">Average to Elite • Footballer</div>
       </div>
-    </a>
-
-```
-<a class="result-card" href="https://youtube.com/watch?v=60Cbilmxqm0" target="_blank">
-  <div class="result-thumb">
-    <img src="https://img.youtube.com/vi/60Cbilmxqm0/hqdefault.jpg" alt="Hais Transformation">
-    <div class="play-btn"></div>
-  </div>
-  <div class="result-info">
-    <div class="result-speed">
-      <span class="from">19</span>
-      <span class="arrow">→</span>
-      <span class="to">36 km/h</span>
     </div>
-    <div class="result-name">Hais</div>
-    <div class="result-detail">Head Coach • +89% speed increase</div>
-  </div>
-</a>
 
-<a class="result-card" href="https://youtube.com/watch?v=L-GYyboePYU" target="_blank">
-  <div class="result-thumb">
-    <img src="https://img.youtube.com/vi/L-GYyboePYU/hqdefault.jpg" alt="James Transformation">
-    <div class="play-btn"></div>
-  </div>
-  <div class="result-info">
-    <div class="result-speed">
-      <span class="from">23</span>
-      <span class="arrow">→</span>
-      <span class="to">32.8 km/h</span>
+    <div class="result-card" data-video="60Cbilmxqm0">
+      <div class="result-thumb">
+        <img src="https://img.youtube.com/vi/60Cbilmxqm0/hqdefault.jpg" alt="Hais Transformation">
+        <div class="play-btn"></div>
+      </div>
+      <div class="result-info">
+        <div class="result-speed">
+          <span class="from">19</span>
+          <span class="arrow">→</span>
+          <span class="to">36 km/h</span>
+        </div>
+        <div class="result-name">Hais</div>
+        <div class="result-detail">Head Coach • +89% speed increase</div>
+      </div>
     </div>
-    <div class="result-name">James</div>
-    <div class="result-detail">Age 12 • Faster than most semi-pros</div>
-  </div>
-</a>
 
-<a class="result-card" href="https://youtube.com/watch?v=eFzb4-BfkeM" target="_blank">
-  <div class="result-thumb">
-    <img src="https://img.youtube.com/vi/eFzb4-BfkeM/hqdefault.jpg" alt="Adam Pro Footballer">
-    <div class="play-btn"></div>
-  </div>
-  <div class="result-info">
-    <div class="result-speed">
-      <span class="from">1.60s</span>
-      <span class="arrow">•</span>
-      <span class="to">35.6 km/h</span>
+    <div class="result-card" data-video="L-GYyboePYU">
+      <div class="result-thumb">
+        <img src="https://img.youtube.com/vi/L-GYyboePYU/hqdefault.jpg" alt="James Transformation">
+        <div class="play-btn"></div>
+      </div>
+      <div class="result-info">
+        <div class="result-speed">
+          <span class="from">23</span>
+          <span class="arrow">→</span>
+          <span class="to">32.8 km/h</span>
+        </div>
+        <div class="result-name">James</div>
+        <div class="result-detail">Age 12 • Faster than most semi-pros</div>
+      </div>
     </div>
-    <div class="result-name">Adam</div>
-    <div class="result-detail">Pro Footballer • La Liga Academy, Spain</div>
-  </div>
-</a>
 
-<a class="result-card" href="https://youtube.com/watch?v=6hgQOEG1CDQ" target="_blank">
-  <div class="result-thumb">
-    <img src="https://img.youtube.com/vi/6hgQOEG1CDQ/hqdefault.jpg" alt="Marc Transformation">
-    <div class="play-btn"></div>
-  </div>
-  <div class="result-info">
-    <div class="result-speed">
-      <span class="from">28</span>
-      <span class="arrow">→</span>
-      <span class="to">34 km/h</span>
+    <div class="result-card" data-video="eFzb4-BfkeM">
+      <div class="result-thumb">
+        <img src="https://img.youtube.com/vi/eFzb4-BfkeM/hqdefault.jpg" alt="Adam Pro Footballer">
+        <div class="play-btn"></div>
+      </div>
+      <div class="result-info">
+        <div class="result-speed">
+          <span class="from">1.60s</span>
+          <span class="arrow">•</span>
+          <span class="to">35.6 km/h</span>
+        </div>
+        <div class="result-name">Adam</div>
+        <div class="result-detail">Pro Footballer • La Liga Academy, Spain</div>
+      </div>
     </div>
-    <div class="result-name">Marc</div>
-    <div class="result-detail">Semi Pro Footballer • +6 km/h in 4 weeks</div>
-  </div>
-</a>
 
-<a class="result-card" href="https://youtube.com/watch?v=_tRGs6CwR90" target="_blank">
-  <div class="result-thumb">
-    <img src="https://img.youtube.com/vi/_tRGs6CwR90/hqdefault.jpg" alt="Tim R Transformation">
-    <div class="play-btn"></div>
-  </div>
-  <div class="result-info">
-    <div class="result-speed">
-      <span class="from">28</span>
-      <span class="arrow">→</span>
-      <span class="to">34 km/h</span>
+    <div class="result-card" data-video="6hgQOEG1CDQ">
+      <div class="result-thumb">
+        <img src="https://img.youtube.com/vi/6hgQOEG1CDQ/hqdefault.jpg" alt="Marc Transformation">
+        <div class="play-btn"></div>
+      </div>
+      <div class="result-info">
+        <div class="result-speed">
+          <span class="from">28</span>
+          <span class="arrow">→</span>
+          <span class="to">34 km/h</span>
+        </div>
+        <div class="result-name">Marc</div>
+        <div class="result-detail">Semi Pro Footballer • +6 km/h in 4 weeks</div>
+      </div>
     </div>
-    <div class="result-name">Tim R</div>
-    <div class="result-detail">Semi Pro Footballer • +6 km/h</div>
-  </div>
-</a>
-```
 
+    <div class="result-card" data-video="_tRGs6CwR90">
+      <div class="result-thumb">
+        <img src="https://img.youtube.com/vi/_tRGs6CwR90/hqdefault.jpg" alt="Tim R Transformation">
+        <div class="play-btn"></div>
+      </div>
+      <div class="result-info">
+        <div class="result-speed">
+          <span class="from">28</span>
+          <span class="arrow">→</span>
+          <span class="to">34 km/h</span>
+        </div>
+        <div class="result-name">Tim R</div>
+        <div class="result-detail">Semi Pro Footballer • +6 km/h</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Remote proof callout -->
+    <!-- Remote proof callout -->
 
   <div class="remote-proof">
     <img src="https://img.youtube.com/vi/l5m0wwJFq-Q/hqdefault.jpg" alt="Virginia Champion" class="remote-proof-img">
@@ -994,6 +1037,14 @@ to { opacity: 1; transform: translateY(0); }
   <p>© 2026 Ambition Sports Performance. All rights reserved.</p>
 </footer>
 
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal">
+  <div class="video-modal-inner">
+    <button class="video-modal-close">&times;</button>
+    <iframe id="videoFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
 <script>
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {
@@ -1004,6 +1055,35 @@ document.querySelectorAll('.faq-q').forEach(q => {
     });
     item.classList.toggle('open');
   });
+});
+
+// Video modal - play on site
+const modal = document.getElementById('videoModal');
+const videoFrame = document.getElementById('videoFrame');
+
+document.querySelectorAll('.result-card[data-video]').forEach(card => {
+  card.addEventListener('click', () => {
+    const videoId = card.getAttribute('data-video');
+    videoFrame.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+function closeModal() {
+  modal.classList.remove('active');
+  videoFrame.src = '';
+  document.body.style.overflow = '';
+}
+
+modal.addEventListener('click', (e) => {
+  if (e.target === modal || e.target.classList.contains('video-modal-close')) {
+    closeModal();
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeModal();
 });
 </script>
 
