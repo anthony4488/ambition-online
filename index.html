@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Remote Speed Analysis | Ambition Sports Performance</title>
 <meta name="description" content="Send us footage. We identify what's limiting your speed and build a program to fix it. From anywhere in the world.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
@@ -51,14 +52,14 @@ align-items: center;
 text-align: center;
 padding: 80px 20px 60px;
 position: relative;
-background: radial-gradient(ellipse at 50% 0%, rgba(0,230,118,0.06) 0%, transparent 60%);
+background: radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.06) 0%, transparent 60%);
 }
 
 .hero-badge {
 display: inline-flex;
 align-items: center;
 gap: 8px;
-background: rgba(0,230,118,0.08);
+background: rgba(255,107,0,0.08);
 border: 1px solid var(--border-accent);
 border-radius: 100px;
 padding: 8px 20px;
@@ -107,7 +108,7 @@ animation: fadeInUp 0.8s ease 0.3s both;
 
 .hero-cta:hover {
 transform: translateY(-2px);
-box-shadow: 0 8px 32px rgba(0,230,118,0.3);
+box-shadow: 0 8px 32px rgba(255,107,0,0.3);
 }
 
 .hero-stats {
@@ -228,7 +229,7 @@ transform: translateY(-4px);
 .hiw-num {
 font-family: ‘Bebas Neue’, sans-serif;
 font-size: 64px;
-color: rgba(0,230,118,0.12);
+color: rgba(255,107,0,0.12);
 position: absolute;
 top: 12px;
 right: 20px;
@@ -386,7 +387,7 @@ z-index: 10000;
 
 /* ── REMOTE PROOF ── */
 .remote-proof {
-background: linear-gradient(135deg, rgba(0,230,118,0.04), transparent);
+background: linear-gradient(135deg, rgba(255,107,0,0.04), transparent);
 border: 1px solid var(--border-accent);
 border-radius: 16px;
 padding: 48px 36px;
@@ -448,7 +449,7 @@ flex-direction: column;
 
 .price-card.featured {
 border-color: var(--accent);
-box-shadow: 0 0 40px rgba(0,230,118,0.1);
+box-shadow: 0 0 40px rgba(255,107,0,0.1);
 }
 
 .price-card:hover {
@@ -528,7 +529,7 @@ color: #000;
 }
 
 .price-btn.primary:hover {
-box-shadow: 0 8px 32px rgba(0,230,118,0.3);
+box-shadow: 0 8px 32px rgba(255,107,0,0.3);
 transform: translateY(-2px);
 }
 
@@ -539,7 +540,7 @@ border: 1px solid var(--border-accent);
 }
 
 .price-btn.secondary:hover {
-background: rgba(0,230,118,0.06);
+background: rgba(255,107,0,0.06);
 }
 
 .popular-badge {
@@ -581,7 +582,7 @@ margin-top: 16px;
 }
 
 .coach-cred {
-background: rgba(0,230,118,0.08);
+background: rgba(255,107,0,0.08);
 border: 1px solid var(--border-accent);
 border-radius: 6px;
 padding: 6px 14px;
@@ -636,7 +637,7 @@ padding-top: 16px;
 .final-cta {
 text-align: center;
 padding: 100px 20px;
-background: radial-gradient(ellipse at 50% 100%, rgba(0,230,118,0.06) 0%, transparent 60%);
+background: radial-gradient(ellipse at 50% 100%, rgba(255,107,0,0.06) 0%, transparent 60%);
 }
 
 .final-cta h2 {
@@ -1077,7 +1078,6 @@ to { opacity: 1; transform: translateY(0); }
     <div class="section-title bebas">Three Tiers. Pick How Serious You Are.</div>
     <p class="section-desc">Every tier starts with the same biomechanical analysis. The difference is how far we take it.</p>
 
-```
 <div class="pricing-grid">
   <!-- Tier 1 -->
   <div class="price-card">
@@ -1093,7 +1093,7 @@ to { opacity: 1; transform: translateY(0); }
       <li>Primary and secondary limiters ranked</li>
       <li>Video walkthrough of your analysis</li>
     </ul>
-    <a href="#STRIPE_LINK_499" class="price-btn secondary">Get The Analysis →</a>
+    <a href="#cta" class="price-btn secondary">Get The Analysis →</a>
   </div>
 
   <!-- Tier 2 -->
@@ -1102,7 +1102,7 @@ to { opacity: 1; transform: translateY(0); }
     <div class="price-tier gold">TIER 2</div>
     <div class="price-name bebas">The Program</div>
     <div class="price-amount">$1,999</div>
-    <div class="price-value">Value: $4,000--$5,000</div>
+    <div class="price-value">Value: $4,000–$5,000</div>
     <ul class="price-features">
       <li>Everything in The Analysis</li>
       <li>12-week individualised speed development program</li>
@@ -1111,7 +1111,7 @@ to { opacity: 1; transform: translateY(0); }
       <li>Week 12 re-analysis — measure your improvement</li>
       <li>1x video call to walk through your plan</li>
     </ul>
-    <a href="#STRIPE_LINK_1999" class="price-btn primary">Get The Program →</a>
+    <a href="#cta" class="price-btn primary">Get The Program →</a>
   </div>
 
   <!-- Tier 3 -->
@@ -1119,7 +1119,7 @@ to { opacity: 1; transform: translateY(0); }
     <div class="price-tier platinum">TIER 3</div>
     <div class="price-name bebas">The Full System</div>
     <div class="price-amount">$5,999</div>
-    <div class="price-value">Value: $15,000--$20,000</div>
+    <div class="price-value">Value: $15,000–$20,000</div>
     <ul class="price-features">
       <li>Everything in The Program</li>
       <li>6 months remote coaching</li>
@@ -1129,10 +1129,9 @@ to { opacity: 1; transform: translateY(0); }
       <li>2x live video calls with Anthony personally</li>
       <li>Footage review and feedback within 24 hours</li>
     </ul>
-    <a href="#STRIPE_LINK_5999" class="price-btn secondary">Get The Full System →</a>
+    <a href="#cta" class="price-btn secondary">Get The Full System →</a>
   </div>
 </div>
-```
 
   </div>
 </section>
